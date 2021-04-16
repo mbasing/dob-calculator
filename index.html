@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Computely</title>
+  </head>
+  <body>
+    <div class="container">
+        <div id = 'finder'>Birth of Year Finder</div>
+      <form action="#" method="post">
+        <input
+          type="number"
+          name=""
+          id="number"
+          min="0"
+          value=""
+          placeholder="Type your age..."
+        />
+        <a href="#"><input type="button" value="Find Year" id="findYear" /></a>
+      </form>
+      <div class="output"></div>
+      <form action="#" method="post" id="dob">
+        <label for="dateOfBirth" id="label">Date of Birth</label><br />
+        <input type="date" name="dateOfBirth" id="birthDate" value="" /><br />
+
+        <label for="ageAtDateOfBirth" id="label">Age at date of</label
+        ><br />
+        <input
+          type="date"
+          name="ageAtDateOfBirth"
+          id="ageAtDateOfBirth"
+          value=""
+        /><br />
+        <a href="#"><input type="button" value="Calculate" id="calculate" /></a>
+      </form>
+      <div id="age__result"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
