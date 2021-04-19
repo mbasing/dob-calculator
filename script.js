@@ -15,8 +15,11 @@ findYear.addEventListener('click',()=>{
         output.appendChild(display);
         let yearOfBirth = currentYear - parsedNumber;
         output.innerHTML = `Your birth year is ${yearOfBirth}`;
+    }else if (number < 0){
+        let output = document.querySelector('.output');
+        output.innerHTML = `Enter a valid age`;
     }else{
-        return ;
+        return;
     }
 })
 
@@ -39,12 +42,41 @@ let displayYearsBetween=()=>{
     }
 
     let dateInDays = date_diff(dateVal1, dateVal2);
-    let yearsOld = Math.round(dateInDays/365);
-    let monthsOld = dateInDays % 365;
-
-    let result = `You are ${yearsOld} years and ${monthsOld} months old`;
     let trueAge = document.querySelector('#age__result');
 
+    const convertDays = d => {
+        let months = 0;
+        let years = 0;
+        let days = 0;
+        let weeks = 0;
+
+        while(d){
+           if(d >= 365){
+              years++;
+              d -= 365;
+           }else if(d >= 30){
+              months++;
+              d -= 30;
+           }else if(d >= 7){
+              weeks++;
+              d -= 7;
+           }else{
+              days++;
+              d--;
+           }
+        };
+        return {
+           years, months, weeks, days
+        };
+     };
+
+     let yearsOld = convertDays(dateInDays).years;
+     let monthsOld = convertDays(dateInDays).months;
+     let weeksOld = convertDays(dateInDays).weeks;
+     let daysOld = convertDays(dateInDays).days;
+
+    let result = `You are ${yearsOld} years, ${monthsOld} months, ${weeksOld} weeks and ${daysOld} days old`;
+     
     if(dateVal1 !== '' && dateVal2 !== ''){
         trueAge.innerHTML = result;
     }
