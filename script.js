@@ -50,6 +50,12 @@ let displayYearsBetween=()=>{
         let days = 0;
         let weeks = 0;
 
+        if(d < 0){
+            if(dateVal1 > dateVal2){
+                trueAge.innerHTML = 'Enter a valid age range';
+            }
+            return;
+        }
         while(d){
            if(d >= 365){
               years++;
@@ -79,10 +85,6 @@ let displayYearsBetween=()=>{
      
     if(dateVal1 !== '' && dateVal2 !== ''){
         trueAge.innerHTML = result;
-    }
-
-    if(dateVal1 > dateVal2){
-        trueAge.innerHTML = 'Enter a valid age range';
     }
 }
 
